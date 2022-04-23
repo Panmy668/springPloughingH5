@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <title>智慧春耕 百城联动</title>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui,viewport-fit=cover" />
+    <meta name="keywords" content="智慧春耕 百城联动">
+    <meta name="description" content="智慧春耕 百城联动">
+    <link rel="shortcut icon" href="./images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="./css/pc.css">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <link rel="stylesheet" type="text/css" href="./css/flagAni.css">
+    <script type='text/javascript' src="./js/jquery3.6.0.js" charset="UTF-8"></script>
+    <style>
+        #app {
+            width: 100%;
+            height: 100%;
+            min-width: 1920px;
+            min-height: 1080px;
+            overflow: hidden;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+        }
+    </style>
+</head>
+
+<body id="app">
+    <div class="main ">
+        <img class="lightBeam" src="./images/revolve.png" alt="" srcset="">
+        <div class="point"></div>
+        <div class="areaContent ">
+            <div class="bigTitle"></div>
+            <div class="bg_white"></div>
+            <div class="bg_line"></div>
+            <section>
+                <!-- 二份子乡 -->
+                <div class="areaImage a1">
+                    <img src="./images/a1.png" alt="" srcset="">
+                </div>
+                <!-- 西乌兰不浪乡 -->
+                <div class="areaImage a2">
+                    <img src="./images/a2.png" alt="" srcset="">
+                </div>
+                <!-- 上秃不亥乡 -->
+                <div class="areaImage a3">
+                    <img src="./images/a3.png" alt="" srcset="">
+                </div>
+                <!-- 嚎赖山乡 -->
+                <div class="areaImage a4">
+                    <img src="./images/a4.png" alt="" srcset="">
+                </div>
+                <!-- 可可以力更镇 -->
+                <div class="areaImage a5">
+                    <img src="./images/a5.png" alt="" srcset="">
+                </div>
+                <!-- 哈乐镇 -->
+                <div class="areaImage a6">
+                    <img src="./images/a6.png" alt="" srcset="">
+                </div>
+                <!-- 哈拉合少乡 -->
+                <div class="areaImage a7">
+                    <img src="./images/a7.png" alt="" srcset="">
+                </div>
+                <!-- 得胜沟乡 -->
+                <div class="areaImage a8">
+                    <img src="./images/a8.png" alt="" srcset="">
+                </div>
+                <!-- 大青山乡 -->
+                <div class="areaImage a9">
+                    <img src="./images/a9.png" alt="" srcset="">
+                </div>
+            </section>
+        </div>
+    </div>
+    <div class="modalWrap">
+        <div class="modalMain">
+            <img class="firework firework1" src="./images/firework.gif" alt="" srcset="">
+            <div class="txt mb39 fs103">智慧春耕 百城联动</div>
+            <div class="txt mb83 fs97">2022第一批武川有机燕麦播种 <br> 暨2022燕麦小屋云端播种仪式 </div>
+            <div class="txt fs145">成功点亮</div>
+            <img class="firework firework2" src="./images/firework.gif" alt="" srcset="">
+        </div>
+    </div>
+    <audio id="bgm" src="./media/m1.mp3" loop></audio>
+    <audio id="bgm2" src="./media/m2.mp3"></audio>
+    <audio id="bgm3" src="./media/m3.mp3"></audio>
+
+    <video id="v1" class="video1">
+        <source type="video/mp4" src="https://qiniuimage.hulianjun.com/cg/1080p.mp4">
+    </video>
+    <!-- <img src="https://qiniuimage.hulianjun.com/cg/1080p.mp4?vframe/jpg/offset/8" class="videoImg" /> -->
+</body>
+
+</html>
+<script>
+    var media = document.getElementById('bgm');
+    var flagDounnce = ''
+    // 第一批牌子
+    const flagPoint = [
+        [87.5, 181.5, '广东', 0, 'flag_Ani_1_0'],
+        [185, 410, '江苏', 1, 'flag_Ani_1_1'],
+        [139, 720, '福建', 2, 'flag_Ani_1_2'],
+        [0, 1120, '浙江', 3, 'flag_Ani_1_3'],
+        [194, 960, '上海', 4, 'flag_Ani_1_4'],
+        [208, 1358, '安徽', 5, 'flag_Ani_1_5'],
+        [557, 351, '内蒙古', 6, 'flag_Ani_1_6'],
+        [442, 714, '北京', 7, 'z99'],
+        [420, 1060, '深圳', 8, 'flag_Ani_1_8']
+    ]
+    // 第二批牌子
+    const flagPoint2 = [
+        [68, 826, '南京'],
+        [412, 148, '苏州'],
+        [309, 285, '昆山'],
+        [52, 1423, '合肥'],
+        [207, 1202, '南通'],
+        [172, 112, '杭州'],
+        [531, 625, '福州'],
+        [389, 1184, '长乐'],
+    ]
+    // 第三批牌子
+    const miniFlag = [
+        [265, 636],
+        [795, 258],
+        [613, 1147],
+        [222, 1020],
+        [322, 211],
+        [346, 939],
+        [412, 448],
+        [680, 433],
+        [639, 959],
+        [468, 1370],
+        [418, 559],
+        [82, 994],
+        [600, 199],
+        [307, 769],
+        [518, 866],
+        [575, 449],
+        [614, 816],
+        [728, 511],
+        [117, 1127],
+        [56, 347],
+        [166, 458],
+        [436, 1013],
+        [467, 246],
+        [281, 1140],
+        [110, 595],
+        [626, 329],
+        [353, 1299],
+        [142, 1244],
+        [491, 1225],
+        [331, 1049],
+        [232, 328],
+        [391, 692],
+        [489, 513]
+    ]
+
+    $(function () {
+        refreshScale()
+        window.onresize = function () {
+            refreshScale()
+        }
+
+        setTimeout(function () {
+            $('.bigTitle').fadeIn(3000)
+        }, 3000)
+        setTimeout(function () {
+            // 第一批
+            window.clearInterval(flagDounnce)
+            flagDounnce = setInterval(function () {
+                if (flagPoint.length > 0) {
+                    document.getElementById('bgm3').pause();
+                    flagDown(0)
+                } else {
+                    // 第二批 
+                    if (flagPoint2.length > 0 && flagPoint.length == 0) {
+                        window.clearInterval(flagDounnce)
+                        flagDounnce = setInterval(function () {
+                            if (flagPoint2.length > 0) {
+                                document.getElementById('bgm3').pause();
+                                flagDown(1)
+                            } else {
+                                // 第三批 
+                                window.clearInterval(flagDounnce)
+                                flagDounnce = setInterval(function () {
+                                    miniFlagFun()
+                                }, 20)
+                            }
+                        }, 1500)
+                    }
+                }
+            }, 5000)
+        }, 6000)
+    })
+
+    function flagDown(type) {
+        const parent = $('.areaContent')
+        var html = ''
+        var len = 0
+        var currentPoint = ''
+        if (type == 0) {
+            currentPoint = getExtract(flagPoint)[0]
+            $('.areaImage').eq(currentPoint[3]).find('img').fadeIn(3000)
+            html = "<div name='falgAni_1' class='flag flag1 flag1_2 " + currentPoint[4] + "' style='top:" + currentPoint[0] + "px; left:" + currentPoint[1] + "px'> <p >" + currentPoint[2] + "</p> <p>燕麦小屋</p> </div>"
+        } else if (type == 1) {
+            currentPoint = getExtract(flagPoint2)[0]
+            html = " <div class='flag flag2 flag1_2' style='top:" + currentPoint[0] + "px; left:" + currentPoint[1] + "px'> <p >" + currentPoint[2] + "</p> <p>燕麦小屋</p>  </div>"
+        } else {
+            len = $('.miniFlag').length
+            currentPoint = miniFlag[len]
+            html = " <div class='miniFlag' style='top:" + currentPoint[0] + "px; left:" + currentPoint[1] + "px'> <span></span> </div>"
+        }
+        parent.prepend(html)
+        setTimeout(function () {
+            document.getElementById('bgm3').play();
+        }, 1000)
+    }
+
+    function miniFlagFun() {
+        const miniFlagLen = $('.miniFlag').length
+        if (miniFlagLen < miniFlag.length) {
+            document.getElementById('bgm3').pause();
+            flagDown(2)
+        }
+        else {
+            window.clearInterval(flagDounnce)
+            document.getElementById('bgm').pause()
+            document.getElementById('bgm').remove()
+            setTimeout(function () {
+                $('#v1').fadeIn(2000)
+                const elevideo = document.getElementById('v1')
+                elevideo.play()
+                $('.main').fadeOut()
+                // elevideo.addEventListener('ended', function () { //结束
+                //     $('.videoImg').fadeIn(3000)
+                // }, false);
+                elevideo.addEventListener('timeupdate', function () {
+                    if (elevideo.currentTime > 8.5) {
+                        elevideo.pause()
+                        
+                    }
+                }, false);
+            }, 4000)
+            // 运动
+            // setTimeout(function () {
+            //     const flageAni = $('div[name="falgAni_1"]')
+            //     for (var i = 0; i <= flageAni.length; i++) {
+            //         try {
+            //             var dom = flageAni[i].classList[2].split('_')
+            //             if (dom.length > 3)
+            //                 flageAni.eq(i).addClass('flag_Ani_1 flag_1_' + dom[3])
+            //         } catch (error) {
+
+            //         }
+            //     }
+            //     setTimeout(function () {
+            //         $('.lightBeam').fadeIn()
+            //         $('.point').fadeIn()
+            //         setTimeout(function () {
+            //             document.getElementById('bgm').pause()
+            //             document.getElementById('bgm').remove()
+            //             document.getElementById('bgm2').play();
+
+            //             $('.modalWrap').fadeIn(3000)
+            //             $('.main').addClass('blur')
+
+            //             $('.lightBeam').remove()
+            //             $('.point').remove()
+            //         }, 2500)
+            //     }, 5000)
+            // }, 5000)
+        }
+    }
+
+    function getExtract(array) {
+        const random = (min, max) => Math.floor(Math.random() * (max - min) + min); //随机数方法
+        let index = random(0, array.length); //生成一个从最小值为0 最大值为数组长度的随机数
+        return array.splice(index, 1);
+    }
+
+    function refreshScale() {
+        const baseWidth = document.documentElement.clientWidth
+        const baseHeight = document.documentElement.clientHeight
+        const appStyle = document.getElementById('app').style
+        const realRatio = baseWidth / baseHeight
+        const designRatio = 16 / 9
+        var scaleRate = baseWidth / 1920
+        if (realRatio > designRatio) {
+            scaleRate = baseHeight / 1080
+        }
+        appStyle.transformOrigin = 'top left'
+        appStyle.transform = `scale(${scaleRate}) translate(-50%,-50%)`
+        appStyle.width = `${baseWidth / scaleRate}px`
+    }
+
+    document.body.addEventListener('mousedown', function () {
+        document.getElementById('bgm').play();
+    }, false);
+    document.body.addEventListener('keydown', function () {
+        document.getElementById('bgm').play();
+    }, false);
+
+</script>
